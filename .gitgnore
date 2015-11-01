@@ -1,5 +1,5 @@
 /vendor
-.idea/
+.idea/**
 .env
 composer.lock
 composer-.lock

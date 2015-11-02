@@ -26,11 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24489796">
+            <state vertical-scroll-proportion="-2.8">
               <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.28150135">
+              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -54,6 +64,7 @@
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/.gitgnore" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -219,12 +230,24 @@
       <option name="project" value="LOCAL" />
       <updated>1446422352551</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="alterado o git ignore">
+      <created>1446422499102</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1446422499102</updated>
+    </task>
+    <task id="LOCAL-00009" summary="alterado o gitignore">
+      <created>1446422634501</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1446422634501</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26399395" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -233,7 +256,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27786753" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32718122" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32718122" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33500838" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -266,7 +289,8 @@
     <MESSAGE value="adicionado o .htaccess" />
     <MESSAGE value="Alteado o welcome" />
     <MESSAGE value="alterado o git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="alterado o git ignore" />
+    <MESSAGE value="alterado o gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="alterado o gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -472,8 +496,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24489796">
+        <state vertical-scroll-proportion="-2.8">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28150135">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
           <folding />
         </state>
       </provider>

@@ -3,8 +3,18 @@
 @section('content')
 <h2>Cadastrar proposta TCC 1</h2>
 
+@if(count($errors) > 0)
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        @foreach($errors->all() as $message)
+            <p class="text-danger">{!! $message !!}</p>
+        @endforeach
+    </div>
+@endif
+
 {!! Form::open(['url' => 'propostatcc/cadastro']) !!}
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingOne">
             <h4 class="panel-title">
@@ -18,12 +28,12 @@
 
                 <div class="form-group">
                     {!! Form::label('nome', 'Nome do formando') !!}
-                    {!! Form::text('nome', '', ['class' => 'form-control']) !!}
+                    {!! Form::text('nome', '', ['class' => 'form-control alert-success']) !!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('orientador', 'Sugest&atilde;o para orientador') !!}
-                    {!! Form::text('orientador', '', ['class' => 'form-control']) !!}
+                    {!! Form::text('orientador', '', ['class' => 'form-control alert-success']) !!}
                 </div>
 
             </div>
@@ -41,21 +51,21 @@
             <div class="panel-body">
                 <div class="form-group">
                     {!! Form::label('titulo', 'Titulo', ['class' => 'control-label']) !!}
-                    {!! Form::text('titulo', '', ['class' => 'form-control']) !!}
+                    {!! Form::text('titulo', '', ['class' => 'form-control alert-success alert-success']) !!}
 
                     {!! Form::label('subtitulo', 'Subtitulo', ['class' => 'control-label']) !!}
-                    {!! Form::text('subtitulo', '', ['class' => 'form-control']) !!}
+                    {!! Form::text('subtitulo', '', ['class' => 'form-control alert-success']) !!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('local', 'Local', ['class' => 'col-sm-2 control-label']) !!}
                     <div class="col-sm-4">
-                    {!! Form::text('local', '', ['class' => 'form-control']) !!}
+                    {!! Form::text('local', '', ['class' => 'form-control alert-success']) !!}
                     </div>
 
                     {!! Form::label('ano', 'Ano', ['class' => 'col-sm-2 control-label']) !!}
                     <div class="col-sm-4">
-                        {!! Form::text('ano', '', ['class' => 'form-control']) !!}
+                        {!! Form::text('ano', '', ['class' => 'form-control alert-success']) !!}
                     </div>
                 </div>
 
@@ -63,37 +73,37 @@
 
                 <div class="form-group">
                     {!! Form::label('finalidade', 'Finalidade', ['class' => 'control-label']) !!}
-                    {!! Form::textarea('finalidade', '', ['class' => 'form-control']) !!}
+                    {!! Form::textarea('finalidade', '', ['class' => 'form-control alert-success']) !!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('objetivos', 'Objetivos', ['class' => 'control-label']) !!}
-                    {!! Form::textarea('objetivos', '', ['class' => 'form-control']) !!}
+                    {!! Form::textarea('objetivos', '', ['class' => 'form-control alert-success']) !!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('problematizacao', 'Problematiza&ccedil;&atilde;o', ['class' => 'control-label']) !!}
-                    {!! Form::textarea('problematizacao', '', ['class' => 'form-control']) !!}
+                    {!! Form::textarea('problematizacao', '', ['class' => 'form-control alert-success']) !!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('delimitacao', 'Delimita&ccedil;&atilde;o', ['class' => 'control-label']) !!}
-                    {!! Form::textarea('delimitacao', '', ['class' => 'form-control']) !!}
+                    {!! Form::textarea('delimitacao', '', ['class' => 'form-control alert-success']) !!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('objetivo_geral', 'Objetivo Geral', ['class' => 'control-label']) !!}
-                    {!! Form::textarea('objetivo_geral', '', ['class' => 'form-control']) !!}
+                    {!! Form::textarea('objetivo_geral', '', ['class' => 'form-control alert-success']) !!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('objetivo_especifico', 'Objetivo especifico', ['class' => 'control-label']) !!}
-                    {!! Form::textarea('objetivo_especifico', '', ['class' => 'form-control']) !!}
+                    {!! Form::textarea('objetivo_especifico', '', ['class' => 'form-control alert-success']) !!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('justificativa', 'Justificativa', ['class' => 'control-label']) !!}
-                    {!! Form::textarea('justificativa', '', ['class' => 'form-control']) !!}
+                    {!! Form::textarea('justificativa', '', ['class' => 'form-control alert-success']) !!}
                 </div>
 
             </div>

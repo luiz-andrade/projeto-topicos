@@ -51,9 +51,13 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                    <li><a href="../navbar-static-top/">Static top</a></li>
-                    <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+                    <li><a href="#">
+                            <span class="glyphicon glyphicon-user"></span> Ola {!! Auth::user()->name !!}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="auth/logout"> Sair</a>
+                    </li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

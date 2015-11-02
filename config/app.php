@@ -8,9 +8,9 @@ return [
 
     'timezone' => 'UTC',
 
-    'locale' => 'en',
+    'locale' => 'pt-BR',
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'pt-BR',
 
     'key' => env('APP_KEY', 'SomeRandomString'),
 

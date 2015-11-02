@@ -7,6 +7,5 @@
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
 
-#Projeto para estudo em sala de aula na matéria tópicos especiais 2
-
-###Será desenvolvido uma aplicação para preenchimento de propostas de TCC.
+##Projeto para estudo em sala de aula na matéria tópicos especiais 2
+Será desenvolvido uma aplicação para preenchimento de propostas de TCC.

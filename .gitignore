@@ -1,5 +1,5 @@
 outros/
-vendor/**
+vendor/
 .ideas/
 .env
 composer.lock

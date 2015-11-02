@@ -1,0 +1,6 @@
+outros/teste.txt
+vendor/**
+.idea/**
+.env
+composer.lock
+composer-.lock

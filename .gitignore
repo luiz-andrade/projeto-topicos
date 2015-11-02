@@ -1,6 +1,6 @@
-outros/teste.txt
+outros/
 vendor/**
-.idea/**
+.ideas/
 .env
 composer.lock
 composer-.lock

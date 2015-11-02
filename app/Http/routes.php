@@ -15,6 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('teste', function(){
-    echo 'Exibindo a URL: '.Config::get('app.url'). '<br /> Para a environment: '.app()->environment();
-});
+Route::controller('propostatcc', 'PropostaTccController');

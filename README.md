@@ -8,3 +8,5 @@
 
 
 #Projeto para estudo em sala de aula na matéria tópicos especiais 2
+
+###Será desenvolvido uma aplicação para preenchimento de propostas de TCC.

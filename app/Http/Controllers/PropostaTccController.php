@@ -34,8 +34,8 @@ class PropostaTccController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }else {
-            //$tcc = new PropostaTcc($dadosFormulario);
-            //$tcc->save();
+            $tcc = new PropostaTcc($dadosFormulario);
+            $tcc->save();
 
             return redirect('propostatcc/');
         }

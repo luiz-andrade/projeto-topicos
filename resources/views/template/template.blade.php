@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="favicon.ico">
 
     <title>Proposta TCC</title>
 
@@ -52,7 +52,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">
-                            <span class="glyphicon glyphicon-user"></span> Ola {!! Auth::user()->name !!}
+                            <span class="glyphicon glyphicon-user"></span> Ola {!! isset(Auth::user()->name) !!}
                         </a>
                     </li>
                     <li>

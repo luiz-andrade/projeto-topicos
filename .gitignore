@@ -2,5 +2,6 @@ outros/
 vendor/
 .idea/
 .env
+.git/
 composer.lock
 .idea/workspace.xml

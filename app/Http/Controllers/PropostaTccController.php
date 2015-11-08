@@ -39,7 +39,6 @@ class PropostaTccController extends Controller
 
             return redirect('propostatcc/');
         }
-
     }
 
     public function show($id)

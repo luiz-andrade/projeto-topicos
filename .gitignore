@@ -1,4 +1,5 @@
 outros/
+vendor/
 .idea/
 .env
 <<<<<<< HEAD

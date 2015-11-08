@@ -52,7 +52,12 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">
-                            <span class="glyphicon glyphicon-user"></span> Ola {!! isset(Auth::user()->name) !!}
+                            <span class="glyphicon glyphicon-user"></span> Ola
+                            @if(Auth::check())
+                                {!! Auth::user()->name !!}
+                            @else
+                                Visitante
+                            @endif
                         </a>
                     </li>
                     <li>

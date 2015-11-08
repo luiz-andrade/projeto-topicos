@@ -15,10 +15,11 @@ class CreatePropostaTccsTable extends Migration
         Schema::create('proposta_tccs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome', 150);
+            $table->string('orientador', 150);
             $table->string('titulo', 150);
             $table->string('subtitulo', 150);
             $table->string('local', 150);
-            $table->date(\Carbon\Carbon::now(), 150);
+            $table->date('ano');
             $table->text('finalidade');
             $table->text('objetivos');
             $table->text('problematizacao');

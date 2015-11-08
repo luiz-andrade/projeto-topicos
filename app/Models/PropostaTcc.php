@@ -25,6 +25,7 @@ class PropostaTcc extends Model
 
     protected $fillable =[
         'nome'                 => 'required',
+        'orientador'           => 'required',
         'titulo'               => 'required',
         'subtitulo'            => 'required',
         'local'                => 'required',

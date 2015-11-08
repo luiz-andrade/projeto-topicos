@@ -15,7 +15,8 @@ class PropostaTccController extends Controller
 
     public function getIndex()
     {
-        return view('painel.index');
+        $dados = PropostaTcc::all();
+        return view('painel.index', compact('dados'));
     }
 
     public function getCadastro()

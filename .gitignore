@@ -1,4 +1,10 @@
 outros/
 .idea/
 .env
+<<<<<<< HEAD
 composer.lock
+=======
+.git/
+composer.lock
+.idea/workspace.xml
+>>>>>>> origin/master

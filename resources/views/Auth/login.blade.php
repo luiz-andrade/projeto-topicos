@@ -28,7 +28,7 @@
                     <div class="form-group">
                         <label for="email" class="control-label col-sm-2">Email</label>
                         <div class="col-sm-10">
-                            <input type="email" name="email" value="{!! old('email') !!}" class="form-control">
+                            <input type="email" name="email" id="email"value="{!! old('email') !!}" class="form-control">
                         </div>
                     </div>
 
@@ -45,6 +45,7 @@
 
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-success">Entrar</button>
+                        <a href="/auth/register">Registrar</a>
                     </div>
                 </form>
             </div>

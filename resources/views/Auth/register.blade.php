@@ -41,7 +41,7 @@
                 </div>
 
                 <div>
-                    Confirm Password
+                    Confirmar Senha
                     <input type="password" name="password_confirmation">
                 </div>
 

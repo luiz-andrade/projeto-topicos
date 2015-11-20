@@ -19,7 +19,7 @@
         <div class="panel-heading" role="tab" id="headingOne">
             <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Dados Pessoais
+                    <span class="glyphicon glyphicon-plus-sign"></span> Dados Pessoais
                 </a>
             </h4>
         </div>
@@ -43,7 +43,7 @@
         <div class="panel-heading" role="tab" id="headingTwo">
             <h4 class="panel-title">
                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Do TCC
+                    <span class="glyphicon glyphicon-plus-sign"></span> Do TCC
                 </a>
             </h4>
         </div>

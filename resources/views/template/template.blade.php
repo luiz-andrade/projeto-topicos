@@ -12,61 +12,29 @@
     <title>Proposta TCC</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    {{--<link href="/assets/css/bootstrap.min.css" rel="stylesheet">--}}
+    {!! Html::style('/assets/css/bootstrap.min.css') !!}
 
 </head>
 
-<body>
+<body style="background: #FFFFFF">
+
+<div class="container well-sm">
+    <div class="col-sm-3">
+        {!! Html::image('/assets/img/logo-si.jpg', '', ['class' => 'img-', 'width' => '160px', 'height' => '90px']) !!}
+        {{--<img src="assets/img/logo-si.png" alt="" width="60px" height="40px">--}}
+    </div>
+    <div class="col-sm-6">
+        <h1>Cadastro de Proposta de TCC</h1>
+    </div>
+    <div class="col-sm-3">
+        {!! Html::image('/assets/img/logo-ulbra.png', '', ['class' => 'img-', 'width' => '80px', 'height' => '90px']) !!}
+    </div>
+</div>
 
 <div class="container">
 
-    <!-- Static navbar -->
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Ulbra</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="{!! Request::is('/propostatcc/') ? 'active': '' !!}"><a href="/propostatcc/">Inicio</a></li>
-                    <li class="{!! Request::is('propostatcc/cadastro*') ? 'active': '' !!}"><a href="/propostatcc/cadastro">Cadastrar</a></li>
-                    <li><a href="#">Contato</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">
-                            <span class="glyphicon glyphicon-user"></span> Ola
-                            @if(Auth::check())
-                                {!! Auth::user()->name !!}
-                            @else
-                                Visitante
-                            @endif
-                        </a>
-                    </li>
-                    <li>
-                        <a href="auth/logout"> Sair</a>
-                    </li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-    </nav>
+    @include('template.menu')
 
     <!-- Main component for a primary marketing message or call to action -->
     <div class="jumbotron">
@@ -76,6 +44,11 @@
 
         @show
     </div>
+
+    <!-- Site footer -->
+    <footer class="footer">
+        <p>&copy; Ulbra 2015</p>
+    </footer>
 
 </div> <!-- /container -->
 

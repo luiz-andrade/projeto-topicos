@@ -8,20 +8,33 @@
         <tr>
             <th>Id</th>
             <th>ano</th>
+            <th>Aluno</th>
+            <th>Orientador</th>
+            <th>Titulo</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
+
     @foreach($dados as $dado)
-        <td>
-            {!! $dado->id !!}
-        </td>
-        <td>
-            {!! $dado->ano !!}
-        </td>
+        <tr>
+            <td>
+                {!! $dado->id !!}
+            </td>
+            <td>
+                {!! $dado->ano !!}
+            </td>
+            <td>
+                {!! $dado->nome !!}
+            </td>
+            <td>
+                {!! $dado->orientador !!}
+            </td>
+            <td>
+                {!! $dado->titulo !!}
+            </td>
+        </tr>
     @endforeach
 
-    </tr>
         </tbody>
     </table>
 @endsection

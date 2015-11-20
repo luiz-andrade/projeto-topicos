@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PropostaTcc;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -27,6 +28,8 @@ class PropostaTccController extends Controller
     public function postCadastro()
     {
         $dadosFormulario = Input::except('_token');
+
+        //$ano = (Carbon::createFromFormat('d/m/Y', $dadosFormulario['ano'])->format('Y-m-d'));
 
         $validator = Validator::make($dadosFormulario, PropostaTcc::$rules, PropostaTcc::$messages);
 

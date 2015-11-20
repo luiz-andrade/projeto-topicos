@@ -10,13 +10,24 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
+use Auth;
 
 class PropostaTccController extends Controller
 {
 
     public function getIndex()
     {
-        $dados = PropostaTcc::all();
+        $usuario= '';
+
+        if (Auth::user()->tipo === 'aluno') {
+            $usuario = Auth::user()->email;
+            
+        }
+
+        $dados = PropostaTcc::where('usuario', 'like', "%".$usuario."%")->get();
+
+        // dd($dados);
+
         return view('painel.index', compact('dados'));
     }
 
@@ -29,7 +40,7 @@ class PropostaTccController extends Controller
     {
         $dadosFormulario = Input::except('_token');
 
-        //$ano = (Carbon::createFromFormat('d/m/Y', $dadosFormulario['ano'])->format('Y-m-d'));
+        ///$ano = (Carbon::createFromFormat('d/m/Y', $dadosFormulario['ano'])->format('Y-m-d'));
 
         $validator = Validator::make($dadosFormulario, PropostaTcc::$rules, PropostaTcc::$messages);
 
@@ -39,6 +50,8 @@ class PropostaTccController extends Controller
                 ->withInput();
         }else {
             $tcc = new PropostaTcc($dadosFormulario);
+
+            $tcc->usuario = Auth::user()->email;
             $tcc->save();
 
             return redirect('propostatcc/');

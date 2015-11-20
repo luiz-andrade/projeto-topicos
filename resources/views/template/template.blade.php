@@ -17,40 +17,48 @@
 
 </head>
 
-<body style="background: #FFFFFF">
+<body>
 
-<div class="container well-sm">
-    <div class="col-sm-3">
-        {!! Html::image('/assets/img/logo-si.jpg', '', ['class' => 'img-', 'width' => '160px', 'height' => '90px']) !!}
-        {{--<img src="assets/img/logo-si.png" alt="" width="60px" height="40px">--}}
-    </div>
-    <div class="col-sm-6">
-        <h1>Cadastro de Proposta de TCC</h1>
-    </div>
-    <div class="col-sm-3">
-        {!! Html::image('/assets/img/logo-ulbra.png', '', ['class' => 'img-', 'width' => '80px', 'height' => '90px']) !!}
+<div class="" style="background: #EEEEEE">
+    <div class="container">
+        <div class="col-sm-3">
+            {!! Html::image('/assets/img/logo-si.png', '', ['class' => 'img-', 'width' => '160px', 'height' => '90px']) !!}
+            {{--<img src="assets/img/logo-si.png" alt="" width="60px" height="40px">--}}
+        </div>
+        <div class="col-sm-9">
+        <br />
+            @include('template.menu')
+        </div>
+    <!--
+        <div class="col-sm-3">
+            {!! Html::image('/assets/img/logo-ulbra.png', '', ['class' => 'img-', 'width' => '80px', 'height' => '90px']) !!}
+        </div>
+        -->
     </div>
 </div>
 
-<div class="container">
-
-    @include('template.menu')
+<div class="container" >
+{{-- style="background: #F5F5F5" --}}
 
     <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <div class="">
         @yield('corpo')
 
         @section('content')
 
         @show
     </div>
+</div> <!-- /container -->
 
-    <!-- Site footer -->
-    <footer class="footer">
+<!-- Site footer -->
+<div style="padding-top: 200px"></div>
+<div class="" style="background: #EEEEEE">
+    <div class="container" style="padding: 20px">
+    <footer class="footer text-center">
         <p>&copy; Ulbra 2015</p>
     </footer>
-
-</div> <!-- /container -->
+    </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>

@@ -1,6 +1,6 @@
 <!-- Static navbar -->
-<nav class="nazzvbar navbar-defasult">
-    <div class="container-fluid">
+<nav class="navbar ZZnavbar-default">
+    <div class="ZZcontainer-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>

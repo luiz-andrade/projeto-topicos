@@ -3,14 +3,15 @@
 @section('content')
     <h1>Bem Vindo ao Index</h1>
 
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered">
         <thead>
-        <tr>
+        <tr class="info">
             <th>Id</th>
             <th>ano</th>
             <th>Aluno</th>
             <th>Orientador</th>
             <th>Titulo</th>
+            <th>Ação</th>
         </tr>
         </thead>
         <tbody>
@@ -31,6 +32,9 @@
             </td>
             <td>
                 {!! $dado->titulo !!}
+            </td>
+            <td>
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
             </td>
         </tr>
     @endforeach

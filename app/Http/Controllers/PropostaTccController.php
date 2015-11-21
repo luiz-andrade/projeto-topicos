@@ -21,7 +21,6 @@ class PropostaTccController extends Controller
 
         if (Auth::user()->tipo === 'aluno') {
             $usuario = Auth::user()->email;
-            
         }
 
         $dados = PropostaTcc::where('usuario', 'like', "%".$usuario."%")->get();
@@ -40,7 +39,7 @@ class PropostaTccController extends Controller
     {
         $dadosFormulario = Input::except('_token');
 
-        ///$ano = (Carbon::createFromFormat('d/m/Y', $dadosFormulario['ano'])->format('Y-m-d'));
+        //$ano = (Carbon::createFromFormat('d/m/Y', $dadosFormulario['ano'])->format('Y-m-d'));
 
         $validator = Validator::make($dadosFormulario, PropostaTcc::$rules, PropostaTcc::$messages);
 

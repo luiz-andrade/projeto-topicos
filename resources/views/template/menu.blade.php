@@ -1,5 +1,5 @@
 <!-- Static navbar -->
-<nav class="navbar ZZnavbar-default">
+<nav class="navbsar navbar-default">
     <div class="ZZcontainer-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -13,7 +13,10 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="{!! Request::is('/propostatcc/') ? 'active': '' !!}"><a href="/propostatcc/">Inicio</a></li>
-                <li class="{!! Request::is('propostatcc/cadastro*') ? 'active': '' !!}"><a href="/propostatcc/cadastro">Cadastrar</a></li>
+
+                @if(!$dados)
+                    <li class="{!! Request::is('propostatcc/cadastro*') ? 'active': '' !!}"><a href="/propostatcc/cadastro">Cadastrar</a></li>
+                @endif
                 <li><a href="#">Contato</a></li>
                 {{--<li class="dropdown">--}}
                     {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>--}}
@@ -29,18 +32,23 @@
                 {{--</li>--}}
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                @if(Auth::check())
                 <li><a href="#">
                         <span class="glyphicon glyphicon-user"></span> Ola
-                        @if(Auth::check())
                             {!! Auth::user()->name !!}
-                        @else
-                            Visitante
-                        @endif
                     </a>
                 </li>
                 <li>
-                    <a href="auth/logout"> Sair</a>
+                    <a href="/auth/logout"> Sair</a>
                 </li>
+                @else
+                    <li>
+                        <a href="">Olá Visitante</a>
+                    </li>
+                    <li>
+                        <a href="/auth/login"><span class="badge"> Entrar</span></a>
+                    </li>
+                @endif
             </ul>
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->

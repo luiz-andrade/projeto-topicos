@@ -34,7 +34,8 @@
                 {!! $dado->titulo !!}
             </td>
             <td>
-                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"> Editar</span>
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"> Excluir</span>
             </td>
         </tr>
     @endforeach

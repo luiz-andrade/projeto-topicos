@@ -13,13 +13,13 @@
 
     <!-- Bootstrap core CSS -->
     {{--<link href="/assets/css/bootstrap.min.css" rel="stylesheet">--}}
-    {!! Html::style('/assets/css/bootstrap.min.css') !!}
+    {!! Html::style('/assets/css/bootstrap.css') !!}
 
 </head>
 
 <body>
 
-<div class="" style="background: #EEEEEE">
+<div class="" style="background: #F8F8F8">
     <div class="container">
         <div class="col-sm-3">
             {!! Html::image('/assets/img/logo-si.png', '', ['class' => 'img-', 'width' => '160px', 'height' => '90px']) !!}

@@ -18,6 +18,7 @@ class PropostaTccController extends Controller
     public function getIndex()
     {
         $usuario= '';
+        $hidden = '';
 
         if (Auth::user()->tipo === 'aluno') {
             $usuario = Auth::user()->email;
@@ -25,9 +26,14 @@ class PropostaTccController extends Controller
 
         $dados = PropostaTcc::where('usuario', 'like', "%".$usuario."%")->get();
 
-        // dd($dados);
+        $status = $dados->lists('status');
 
-        return view('painel.index', compact('dados'));
+        foreach($status as $item) {
+            if($item === 'aguardando')
+                $hidden= 'hidden';
+        }
+
+        return view('painel.index', compact('dados', 'status', 'hidden', 'usuario'));
     }
 
     public function getCadastro()
@@ -57,13 +63,48 @@ class PropostaTccController extends Controller
         }
     }
 
-    public function show($id)
+    public function getEditar($id)
     {
-        //
+        $proposta = PropostaTcc::find($id);
+
+        return view("painel.editar", compact('proposta'));
     }
 
-    public function edit($id)
+    public function postEditar($id)
     {
-        //
+        $dadosFormulario = Input::all();
+
+        $proposta = PropostaTcc::find($id);
+
+        $validator = Validator::make($dadosFormulario, PropostaTcc::$rules, PropostaTcc::$messages);
+
+        if($validator->fails()){
+            return redirect('propostatcc/editar/'.$id)
+                ->withErrors($validator)
+                ->withInput();
+        }else {
+
+            $proposta->__construct($dadosFormulario);
+            $proposta->save();
+
+            return redirect('propostatcc/');
+        }
     }
+
+    public function getEnviar($id)
+    {
+        //$dadosFormulario = Input::all();
+        $proposta = PropostaTcc::find($id);
+
+        $proposta->status = 'aguardando';
+        $proposta->save();
+
+        return redirect('propostatcc/');
+    }
+
+    public function getPdf()
+    {
+        return "Pdf";
+    }
+
 }

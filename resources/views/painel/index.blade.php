@@ -34,8 +34,32 @@
                 {!! $dado->titulo !!}
             </td>
             <td>
-                <span class="glyphicon glyphicon-edit" aria-hidden="true"> Editar</span>
-                <span class="glyphicon glyphicon-edit" aria-hidden="true"> Excluir</span>
+                @if(!empty($usuario))
+                    <div class="{!! $hidden !!}">
+                        <a href="/propostatcc/editar/{!! $dado->id !!}" class="btn btn-xs btn-warning">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"> Revisar </span>
+                        </a>&nbsp;
+
+                        <a href="/propostatcc/enviar/{!! $dado->id !!}" class="btn btn-xs btn-success">
+                            <span class="glyphicon glyphicon-send" aria-hidden="true"> Enviar </span>
+                        </a>
+                    </div>&nbsp;
+                @else
+                    <div class="">
+                        <a href="/propostatcc/editar/{!! $dado->id !!}" class="btn btn-xs btn-warning">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"> Revisar </span>
+                        </a>&nbsp;
+
+                        <a href="/propostatcc/enviar/{!! $dado->id !!}" class="btn btn-xs btn-success">
+                            <span class="glyphicon glyphicon-send" aria-hidden="true"> Enviar </span>
+                        </a>
+                    </div>&nbsp;
+                @endif
+
+                    <a href="/propostatcc/pdf/{!! $dado->id !!}" class="btn btn-xs btn-success">
+                        <span class="glyphicon glyphicon-download" aria-hidden="true"> PDF</span>
+                    </a>
+
             </td>
         </tr>
     @endforeach

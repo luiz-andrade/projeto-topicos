@@ -8,13 +8,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Ulbra</a>
+            <a class="navbar-brand" href="/">Ulbra</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="{!! Request::is('/propostatcc/') ? 'active': '' !!}"><a href="/propostatcc/">Inicio</a></li>
 
-                @if(!$dados)
+                @if(empty($dados))
                     <li class="{!! Request::is('propostatcc/cadastro*') ? 'active': '' !!}"><a href="/propostatcc/cadastro">Cadastrar</a></li>
                 @endif
                 <li><a href="#">Contato</a></li>

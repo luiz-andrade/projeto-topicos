@@ -28,6 +28,7 @@ class CreatePropostaTccsTable extends Migration
             $table->text('objetivo_especifico');
             $table->text('justificativa');
             $table->text('usuario');
+            $table->string('status')->default('');
             $table->timestamps();
         });
     }

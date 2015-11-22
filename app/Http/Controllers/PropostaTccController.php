@@ -39,7 +39,7 @@ class PropostaTccController extends Controller
         return view('painel.index', compact('dados', 'status', 'hidden', 'usuario'));
     }
 
-    public function getCadastro()
+    public function getCadastrar()
     {
         return view('painel.cadastrar');
     }

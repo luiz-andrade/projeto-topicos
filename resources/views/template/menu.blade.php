@@ -1,6 +1,6 @@
 <!-- Static navbar -->
-<nav class="navbsar navbar-default">
-    <div class="ZZcontainer-fluid">
+<nav class="ZZnavbar navbar-default">
+    <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -15,7 +15,7 @@
                 <li class="{!! Request::is('/propostatcc/') ? 'active': '' !!}"><a href="/propostatcc/">Inicio</a></li>
 
                 @if(empty($dados))
-                    <li class="{!! Request::is('propostatcc/cadastro*') ? 'active': '' !!}"><a href="/propostatcc/cadastro">Cadastrar</a></li>
+                    <li class="{!! Request::is('propostatcc/cadastro*') ? 'active': '' !!}"><a href="/propostatcc/cadastrar">Cadastrar</a></li>
                 @endif
                 <li><a href="#">Contato</a></li>
                 {{--<li class="dropdown">--}}

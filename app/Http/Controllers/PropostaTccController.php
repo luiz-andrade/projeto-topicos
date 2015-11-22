@@ -24,6 +24,9 @@ class PropostaTccController extends Controller
             $usuario = Auth::user()->email;
         }
 
+        //dd($usuario);
+        //$dados = PropostaTcc::all();
+
         $dados = PropostaTcc::where('usuario', 'like', "%".$usuario."%")->get();
 
         $status = $dados->lists('status');
@@ -38,10 +41,10 @@ class PropostaTccController extends Controller
 
     public function getCadastro()
     {
-        return view('painel.cadastro');
+        return view('painel.cadastrar');
     }
 
-    public function postCadastro()
+    public function postCadastrar()
     {
         $dadosFormulario = Input::except('_token');
 
@@ -50,7 +53,7 @@ class PropostaTccController extends Controller
         $validator = Validator::make($dadosFormulario, PropostaTcc::$rules, PropostaTcc::$messages);
 
         if($validator->fails()){
-            return redirect('propostatcc/cadastro')
+            return redirect('propostatcc/cadastrar')
                 ->withErrors($validator)
                 ->withInput();
         }else {

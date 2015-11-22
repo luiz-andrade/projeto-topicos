@@ -15,7 +15,6 @@
         </tr>
         </thead>
         <tbody>
-
     @foreach($dados as $dado)
         <tr>
             <td>

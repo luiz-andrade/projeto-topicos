@@ -19,9 +19,11 @@ class PropostaTccController extends Controller
     {
         $usuario= '';
         $hidden = '';
+        $btnEditar= "Devolver";
 
         if (Auth::user()->tipo === 'aluno') {
             $usuario = Auth::user()->email;
+            $btnEditar= "Revisar";
         }
 
         //dd($usuario);
@@ -36,7 +38,7 @@ class PropostaTccController extends Controller
                 $hidden= 'hidden';
         }
 
-        return view('painel.index', compact('dados', 'status', 'hidden', 'usuario'));
+        return view('painel.index', compact('dados', 'status', 'hidden', 'usuario', 'btnEditar'));
     }
 
     public function getCadastrar()
@@ -96,13 +98,29 @@ class PropostaTccController extends Controller
 
     public function getEnviar($id)
     {
-        //$dadosFormulario = Input::all();
+        $situacao = Input::get('situacao');
+
+        switch($situacao){
+            case '0': $status = 'aprovado'; break;
+            case '1': $status = 'reprovado'; break;
+            case '2': $status = 'revisar'; break;
+            case '3': $status = 'aguardando'; break;
+        }
+
         $proposta = PropostaTcc::find($id);
 
-        $proposta->status = 'aguardando';
+        $proposta->status = $status;
         $proposta->save();
 
         return redirect('propostatcc/');
+    }
+
+    public function getShow($id){
+
+        $dados = PropostaTcc::find($id);
+
+        return view('painel.show');
+
     }
 
     public function getPdf()

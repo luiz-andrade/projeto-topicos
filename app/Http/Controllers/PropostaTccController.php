@@ -17,13 +17,15 @@ class PropostaTccController extends Controller
 
     public function getIndex()
     {
-        $usuario= '';
-        $hidden = '';
-        $btnEditar= "Devolver";
+        $usuario   = '';
+        $hidden    = '';
+        $disabled  = '';
+        $btnEditar = "Devolver";
 
         if (Auth::user()->tipo === 'aluno') {
-            $usuario = Auth::user()->email;
-            $btnEditar= "Revisar";
+            $usuario     = Auth::user()->email;
+            $btnEditar   = "Revisar";
+            $hiddenAluno = '';
         }
 
         //dd($usuario);
@@ -34,11 +36,22 @@ class PropostaTccController extends Controller
         $status = $dados->lists('status');
 
         foreach($status as $item) {
-            if($item === 'aguardando')
-                $hidden= 'hidden';
+            switch($item){
+                case 'aprovado':    $hidden      = 'hidden';   break;
+                case 'reprovado':   $hidden      = 'hidden';   break;
+                case 'revisar':     $disabled    = 'disabled'; break;
+                case 'aguardando':  $hiddenAluno = 'hidden';   break;
+            }
         }
 
-        return view('painel.index', compact('dados', 'status', 'hidden', 'usuario', 'btnEditar'));
+        return view('painel.index', compact(
+            'dados',
+            'status',
+            'hidden',
+            'usuario',
+            'btnEditar',
+            'disabled',
+            'hiddenAluno'));
     }
 
     public function getCadastrar()

@@ -11,6 +11,7 @@
             <th>Aluno</th>
             <th>Orientador</th>
             <th>Titulo</th>
+            <th>Situação</th>
             <th>Ação</th>
         </tr>
         </thead>
@@ -33,8 +34,12 @@
                 {!! $dado->titulo !!}
             </td>
             <td>
+                {!! $dado->status !!}
+            </td>
+
+            <td>
                 @if(!empty($usuario))
-                    <div class="{!! $hidden !!}">
+                    <div class="{!! $hiddenAluno !!}">
                         <a href="/propostatcc/editar/{!! $dado->id !!}" class="btn btn-xs btn-warning">
                             <span class="glyphicon glyphicon-edit" aria-hidden="true"> {!! $btnEditar !!}</span>
                         </a>&nbsp;
@@ -44,16 +49,18 @@
                         </a>
                     </div>&nbsp;
                 @else
-                    <a href="/propostatcc/enviar/{!! $dado->id !!}?situacao=0" class="btn btn-xs btn-success">
-                        <span class="glyphicon glyphicon-send" aria-hidden="true"> Aprovar </span>
-                    </a>&nbsp;
-                    <a href="/propostatcc/enviar/{!! $dado->id !!}?situacao=1" class="btn btn-xs btn-danger">
-                        <span class="glyphicon glyphicon-send" aria-hidden="true"> Reprovar </span>
-                    </a>&nbsp;
+                    <div class="{!! $hidden !!}">
+                        <a href="/propostatcc/enviar/{!! $dado->id !!}?situacao=0" class="btn btn-xs btn-success">
+                            <span class="glyphicon glyphicon-send" aria-hidden="true"> Aprovar </span>
+                        </a>&nbsp;
+                        <a href="/propostatcc/enviar/{!! $dado->id !!}?situacao=1" class="btn btn-xs btn-danger">
+                            <span class="glyphicon glyphicon-send" aria-hidden="true"> Reprovar </span>
+                        </a>&nbsp;
 
-                    <a href="/propostatcc/enviar/{!! $dado->id !!}?situacao=2" class="btn btn-xs btn-warning">
-                        <span class="glyphicon glyphicon-edit" aria-hidden="true"> {!! $btnEditar !!} </span>
-                    </a>&nbsp;
+                        <a href="/propostatcc/enviar/{!! $dado->id !!}?situacao=2" class="btn btn-xs btn-warning {!! $disabled !!} ">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"> {!! $btnEditar !!} </span>
+                        </a>&nbsp;
+                    </div>
                 @endif
 
                     <button type="button" class="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">

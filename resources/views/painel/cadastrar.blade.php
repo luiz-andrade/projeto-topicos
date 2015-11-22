@@ -12,7 +12,7 @@
     </div>
 @endif
 
-{!! Form::open(['url' => 'propostatcc/cadastro']) !!}
+{!! Form::open(['url' => 'propostatcc/cadastrar']) !!}
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
     <div class="panel panel-default">

@@ -1,21 +1,25 @@
 <!-- Static navbar -->
-<nav class="ZZnavbar navbar-default">
+<nav class="ZZnavbar navbdar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="icon-bar">Menu</span>
+                {{--<span class="icon-bar"></span>--}}
+                {{--<span class="icon-bar"></span>--}}
             </button>
-            <a class="navbar-brand" href="/">Ulbra</a>
+            <a class="navbar-brand" href="/"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="{!! Request::is('/propostatcc/') ? 'active': '' !!}"><a href="/propostatcc/">Inicio</a></li>
 
-                @if(empty($dados))
-                    <li class="{!! Request::is('propostatcc/cadastro*') ? 'active': '' !!}"><a href="/propostatcc/cadastrar">Cadastrar</a></li>
+                @if(Request::is('/propostatcc/'))
+
+                    @if(empty($dados))
+                        <li class="{!! Request::is('propostatcc/cadastrar*') ? 'active': '' !!}"><a href="/propostatcc/cadastrar">Cadastrar</a></li>
+                    @endif
+
                 @endif
                 <li><a href="#">Contato</a></li>
                 {{--<li class="dropdown">--}}

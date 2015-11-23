@@ -56,6 +56,7 @@ class PropostaTccController extends Controller
 
     public function getCadastrar()
     {
+
         return view('painel.cadastrar');
     }
 

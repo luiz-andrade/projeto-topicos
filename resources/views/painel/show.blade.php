@@ -10,7 +10,7 @@
                 <h4 class="modal-title" id="myModalLabel">Aluno:  {!! $dado->nome !!}</h4>
             </div>
             <div class="modal-body">
-                <table border="0" class="table">
+                <table border="0" class="table table-bordered table-hover">
                     <thead>
                     <tr>
                         <td></td>
@@ -41,10 +41,10 @@
                         <td><strong>Objetivos: </strong> {!! $dado->objetivos !!}</td>
                     </tr>
                     <tr>
-                        <td><strong>ProblematizaÁ„o: </strong> {!! $dado->Problematizacao !!}</td>
+                        <td><strong>Problematiza√ß√£o: </strong> {!! $dado->Problematizacao !!}</td>
                     </tr>
                     <tr>
-                        <td><strong>DelimitaÁ„o: </strong> {!! $dado->delimitacao !!}</td>
+                        <td><strong>Delimita√ß√£o: </strong> {!! $dado->delimitacao !!}</td>
                     </tr>
                     <tr>
                         <td><strong>Objetivo geral: </strong> {!! $dado->objetivo_geral !!}</td>
@@ -56,22 +56,22 @@
                         <td><strong>Justificativa: </strong> {!! $dado->justificativa !!}</td>
                     </tr>
                     <tr>
-                        <td><strong>Usu·rio: </strong> {!! $dado->usuario !!}</td>
+                        <td><strong>Usu√°rio: </strong> {!! $dado->usuario !!}</td>
                     </tr>
                     <tr>
-                        <td><strong>Status: </strong> {!! $dados->status !!}</td>
+                        <td><strong>Status: </strong> {!! $dado->status !!}</td>
                     </tr>
                     <tr>
-                        <td><strong>Dia da criaÁ„o: </strong> {!! $dado->created_at !!}</td>
+                        <td><strong>Dia da cria√ß√£o: </strong> {!! $dado->created_at !!}</td>
                     </tr>
                     <tr>
-                        <td><strong>Dia da atualizaÁ„o: </strong> {!! $dado->updated_at !!}</td>
+                        <td><strong>Dia da atualiza√ß√£o: </strong> {!! $dado->updated_at !!}</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal">Fechar</button>
                 {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
             </div>
         </div>

@@ -37,7 +37,7 @@
                 {!! $dado->status !!}
             </td>
 
-            <td>
+            <td colspan="2">
                 @if(!empty($usuario))
                     <div class="{!! $hiddenAluno !!}">
                         <a href="/propostatcc/editar/{!! $dado->id !!}" class="btn btn-xs btn-warning">

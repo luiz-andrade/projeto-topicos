@@ -6799,6 +6799,8 @@ button.close {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
-.footer{
-    position: fixed;
+.footer {
+  position:fixed;
+  bottom:0;
+  width:100%;
 }

@@ -19,10 +19,12 @@
 
 <body>
 
-<div class="" style="background: #F8F8F8">
+<div class="" style="background: #D9EDF7">
     <div class="container">
         <div class="col-sm-3">
-            {!! Html::image('/assets/img/logo-si.png', '', ['class' => 'img-', 'width' => '160px', 'height' => '90px']) !!}
+            <a href="/">
+                {!! Html::image('/assets/img/logo-si.png', '', ['class' => 'img-responsive', 'width' => '160px', 'height' => '90px']) !!}
+            </a>
             {{--<img src="assets/img/logo-si.png" alt="" width="60px" height="40px">--}}
         </div>
         <div class="col-sm-9">
@@ -51,10 +53,9 @@
 </div> <!-- /container -->
 
 <!-- Site footer -->
-<div style="padding-top: 200px"></div>
-<div class="" style="background: #EEEEEE">
-    <div class="container" style="padding: 20px">
-    <footer class="footer text-center">
+<div class="footer" style="background: #D9EDF7">
+    <div class="container" style="padding: 5px">
+    <footer class="text-center">
         <p>&copy; Ulbra 2015</p>
     </footer>
     </div>

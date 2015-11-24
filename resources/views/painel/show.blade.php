@@ -2,8 +2,8 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -11,11 +11,6 @@
             </div>
             <div class="modal-body">
                 <table border="0" class="table table-bordered table-hover">
-                    <thead>
-                    <tr>
-                        <td></td>
-                    </tr>
-                    </thead>
                     <tbody>
                     <tr>
                         <td><strong>Ano: </strong> {!! $dado->ano !!}</td>

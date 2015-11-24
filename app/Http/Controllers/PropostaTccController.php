@@ -137,9 +137,26 @@ class PropostaTccController extends Controller
 
     }
 
-    public function getPdf()
+    public function getPdf($id)
     {
-        return "Pdf";
+        $proposta = PropostaTcc::find($id);
+        $ano = Carbon::createFromFormat('d/m/Y', $proposta->ano)->format('Y');
+
+//        dd($ano);
+        //$data['items'] = $proposta;
+
+        //dd($proposta);
+//        $dt_inicio= Carbon::createFromFormat('d/m/Y', Input::get('dt_inicio'))->format('Y-m-d');
+//        $dt_fim   = Carbon::createFromFormat('d/m/Y', Input::get('dt_fim'))->format('Y-m-d');
+        $title = 'Proposta de TCC';
+
+        $date    = date('d/m/Y H:m:s');
+        $empresa = 'CENTRO UNIVERSITÁRIO LUTERANO DE JI-PARANÁ';
+        $view    =  \View::make('painel.propostatcc-pdf', compact('date','empresa', 'proposta', 'title', 'ano'))->render();
+        $pdf     = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream($title.'.pdf');
+        //return $pdf->download($title.'.pdf');//para baixar o arquivo
     }
 
 }

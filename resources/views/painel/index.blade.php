@@ -39,6 +39,7 @@
 
             <td colspan="2">
                 @if(!empty($usuario))
+                    @if(!$hidden)
                     <div class="{!! $hiddenAluno !!}">
                         <a href="/propostatcc/editar/{!! $dado->id !!}" class="btn btn-xs btn-warning">
                             <span class="glyphicon glyphicon-edit" aria-hidden="true"> {!! $btnEditar !!}</span>
@@ -48,6 +49,7 @@
                             <span class="glyphicon glyphicon-send" aria-hidden="true"> Enviar </span>
                         </a>
                     </div>&nbsp;
+                    @endif
                 @else
                     <div class="{!! $hidden !!}">
                         <a href="/propostatcc/enviar/{!! $dado->id !!}?situacao=0" class="btn btn-xs btn-success">

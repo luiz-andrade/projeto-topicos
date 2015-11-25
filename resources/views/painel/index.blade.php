@@ -3,6 +3,7 @@
 @section('content')
     <h1>Bem Vindo ao Index</h1>
 
+@if(!empty($dados))
     <table class="table table-hover table-bordered">
         <thead>
         <tr class="info">
@@ -97,6 +98,8 @@
     </table>
 
     @include('painel.show')
-
+@else
+    <div class="alert alert-danger">nada cadastrado</div>
+@endif
 
 @endsection

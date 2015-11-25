@@ -12,9 +12,9 @@
     <li class=" {!! Request::is('propostatcc*') ? 'active': '' !!}"><a href="/propostatcc/">Inicio</a></li>
 
 {{--    {{ dd(Request::path()) }}--}}
-    @if(Request::path() != "/propostatcc/" )
+    @if(Request::path() === "propostatcc" )
 
-        @if(!isset($dados))
+        @if(isset($dados))
             <li class="{!! Request::is('propostatcc/cadastrar*') ? 'active': '' !!}"><a href="/propostatcc/cadastrar">Cadastrar</a></li>
         @endif
 

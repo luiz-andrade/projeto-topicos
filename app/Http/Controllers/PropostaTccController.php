@@ -31,11 +31,10 @@ class PropostaTccController extends Controller
         //dd($usuario);
         //$dados = PropostaTcc::all();
 
-        $dados = PropostaTcc::where('usuario', 'like', "%".$usuario."%")->get();
+        $dados = PropostaTcc::where('usuario', 'like', "%".$usuario."%");
 
-        if(empty($dados)){
             dd($dados);
-        }
+
 
         $status = $dados->lists('status');
 

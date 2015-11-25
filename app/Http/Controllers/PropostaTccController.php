@@ -18,7 +18,7 @@ class PropostaTccController extends Controller
 
     public function getIndex()
     {
-        $title = "Listagem de Proposta TCC 1";
+        $title = "Listagem de Proposta TCC";
         $usuario   = '';
         $hidden    = '';
         $disabled  = '';
@@ -63,7 +63,7 @@ class PropostaTccController extends Controller
 
     public function getCadastrar()
     {
-        $title = "Cadastrar nova Proposta TCC 1";
+        $title = "Cadastrar nova Proposta TCC";
 
         return view('painel.cadastrar', compact('title'));
     }
@@ -92,7 +92,7 @@ class PropostaTccController extends Controller
 
     public function getEditar($id)
     {
-        $title = "Editar Proposta TCC 1";
+        $title = "Editar Proposta TCC";
 
         $proposta = PropostaTcc::find($id);
 

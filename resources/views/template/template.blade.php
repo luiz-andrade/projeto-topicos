@@ -19,16 +19,11 @@
 
 <body class="container">
 <div class="bordas">
-<div class="" style="box-shadow:2px 0px 21px #D9EDF7; background-color: #F7FAFC;" >
-    <div class="container-fluid" style="/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,1e5799+100,7db9e8+100&amp;0+0,1+100;Blue+to+Transparent */
-background: -moz-linear-gradient(top,  rgba(30,87,153,0) 0%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(30,87,153,0) 0%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(30,87,153,0) 0%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
-">
-        <div class="col-sm-3">
+<div class="" style="box-shadow:2px 0px 21px #D9EDF7; background-color: #00bbff; padding: 10px">
+    <div class="container-fluid fundo-topoZ">
+        <div class="col-sm-3" > {{--style="float: left; position: absolute;"--}}
             <a href="/">
-                {!! Html::image('/assets/img/logo-si.png', '', ['class' => 'img-responsive', 'width' => '160px', 'height' => '90px']) !!}
+                {!! Html::image('/assets/img/logo-si.png', '', ['class' => 'img-responsive', 'width' => '220px', 'height' => '120px']) !!}
             </a>
             {{--<img src="assets/img/logo-si.png" alt="" width="60px" height="40px">--}}
         </div>
@@ -36,19 +31,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', e
             <br />
             @include('template.menu')
         </div>
-    <!--
-        <div class="col-sm-3">
-            {!! Html::image('/assets/img/logo-ulbra.png', '', ['class' => 'img-', 'width' => '80px', 'height' => '90px']) !!}
-        </div>
-        -->
     </div>
 </div>
 
 <div class="container-fluid panel">
-    <div class="row panel panel-default text-center">
+    <div class="row text-center" >
         @section('title')
 
         @show
+            <hr>
     </div>
 {{-- style="background: #F5F5F5" --}}
 
@@ -62,10 +53,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', e
 
     <!-- Site footer -->
     <div class="footer" style="box-shadow:0px -6px 5px #D9EDF7;  background-image: -webkit-linear-gradient(top, #ffffff 0%, #F6F6F6 47%, #ededed 100%);">
-        <div class="container" style="padding: 5px">
-        <footer class="text-center">
-            <p>&copy; Ulbra 2015</p>
-        </footer>
+        <div class="container" style="padding: 0px">
+
+        <div class="col-sm-3">
+            {!! Html::image('/assets/img/logo-ulbra.png', '', ['class' => 'img-', 'width' => '60px', 'height' => '70px']) !!}
+        </div>
+
+        <div class="col-sm-6">
+            <footer class="text-center" style="padding-top: 20px">
+                <p>&copy; Ulbra 2015</p>
+            </footer>
+        </div>
+
+        <div class="col-sm-3">
+            &nbsp;
+        </div>
         </div>
     </div>
 </div>

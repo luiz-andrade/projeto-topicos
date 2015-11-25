@@ -12,13 +12,14 @@
     <li class=" {!! Request::is('/*') ? 'active': '' !!}">
         <a href="/"><span class="glyphicon glyphicon-home"></span> Inicio</a>
     </li>
-    <li class=" {!! Request::is('propostatcc*') ? 'active': '' !!}"><a href="/propostatcc/"><span class="glyphicon glyphicon-list"></span> Minha Proposta</a></li>
+    <li class=" {!! Request::is('propostatcc') ? 'active': '' !!}"><a href="/propostatcc/"><span class="glyphicon glyphicon-list"></span> Listar Proposta</a></li>
 
-{{--    {{ dd(Request::path()) }}--}}
+{{--    {{ dd(Request::segment(1)) }}--}}
+    {{--<li @if (Request::is('propostatcc/contato*')) class="active" @endif>--}}
     @if(Request::path() === "propostatcc" )
 
         @if($dados->isEmpty())
-            <li class="{!! Request::is('propostatcc/cadastrar*') ? 'active': '' !!}">
+            <li class="{!! Request::path() ? 'active': '' !!}">
                 <a href="/propostatcc/cadastrar"><span class="glyphicon glyphicon-plus-sign"></span> Cadastrar</a>
             </li>
         @endif

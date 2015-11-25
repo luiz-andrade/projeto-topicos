@@ -9,13 +9,13 @@
 </head>
 <body>
 
-<span style="font-size: 1.5em;" class="text-center space-50">CURSO DE SISTEMAS DE INFORMAÇÃO</span>
+<h2 class="text-center space-50">CURSO DE SISTEMAS DE INFORMAÇÃO</h2>
 
 <h3 class="text-center">PROPOSTA DE TRABALHO DE CONCLUSÃO DE CURSO</h3>
 
 {{--{!! dd($proposta->titulo) !!}--}}
 
-<h1 class="text-center space-50">{!! $proposta->titulo !!}</h1>
+<h1 class="text-center">{!! $proposta->titulo !!}</h1>
 
 <p class="text-center space-25"> Por <br />{!! $proposta->nome !!}</p>
 
@@ -33,7 +33,7 @@
 
 
 
-<p class="next-page">Página 1</p>
+<p class="next-page"></p>
 
 
 <h2 class="text-center space-50">{!! $empresa !!}</h2>

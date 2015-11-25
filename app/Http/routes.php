@@ -15,8 +15,6 @@
 //    return view('welcome');
 //});
 
-Route::get('/', 'WelcomeController@getIndex');
-Route::get('/home', 'WelcomeController@getIndex');
 
 Route::controller ('formulario', 'FormularioController');
 
@@ -30,6 +28,11 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::group(['prefix' => '/', 'middleware' => 'auth'], function() {
+
+    Route::get('/', 'WelcomeController@getIndex');
+
+//    Route::get('/home', 'WelcomeController@getIndex');
+
     Route::controller('propostatcc', 'PropostaTccController');
 });
 

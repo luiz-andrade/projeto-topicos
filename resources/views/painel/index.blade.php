@@ -10,7 +10,7 @@
 @if(!$dados->isEmpty())
 
     {{--<table class="table table-hover table-bordered">--}}
-    <div class="col-sm-10 col-lg-12 col-md-12 table-responsiveZZ">
+    <div class="col-sm-10 col-lg-12 col-md-12 table-responsiveZZ"  style="padding-bottom: 150px">
         <table class="table table-striped table-hover table-bordered">
             <thead>
             <tr class="active">

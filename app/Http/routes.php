@@ -10,14 +10,13 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+//
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@getIndex');
+Route::get('/home', 'WelcomeController@getIndex');
 
 Route::controller ('formulario', 'FormularioController');
 

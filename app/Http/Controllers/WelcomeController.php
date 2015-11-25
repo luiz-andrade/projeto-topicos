@@ -6,11 +6,15 @@ use App\Models\PropostaTcc;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
 
+use Auth;
+
 
 class WelcomeController extends Controller
 {
     public function getIndex()
     {
+        $title = "Sistema de cadastro de Proposta TCC";
+
         if (Auth::user()->tipo === 'aluno') {
             $usuario     = Auth::user()->email;
         }
@@ -20,7 +24,7 @@ class WelcomeController extends Controller
 
         $dados = PropostaTcc::where('usuario', 'like', "%".$usuario."%")->get();
 
-        return view ('welcome', compact('dados'));
+        return view ('welcome', compact('dados', 'title'));
     }
 
     public function postAdicionar()
@@ -31,4 +35,5 @@ class WelcomeController extends Controller
 
         return "Adicionando..";
     }
+
 }

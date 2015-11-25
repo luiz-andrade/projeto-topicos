@@ -1,7 +1,10 @@
 @extends('template.template')
 
 @section('content')
-<h2>Cadastrar proposta TCC 1</h2>
+
+    @section('title')
+        <h3>{!! $title !!}</h3>
+    @endsection
 
 @if(count($errors) > 0)
     <div class="alert alert-warning alert-dismissible" role="alert">
@@ -106,14 +109,15 @@
                     {!! Form::textarea('justificativa', '', ['class' => 'form-control alert-info']) !!}
                 </div>
 
+                <div class="form-group">
+                    {!! Form::submit('Enviar proposta', ['class' => 'btn btn-info']) !!}
+                </div>
+
             </div>
         </div>
     </div>
-
-    <hr />
-        {!! Form::submit('Enviar proposta', ['class' => 'btn btn-info']) !!}
-
 </div>
 {!! Form::close() !!}
+<hr />
 
 @endsection

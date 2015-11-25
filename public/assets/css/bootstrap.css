@@ -6802,16 +6802,16 @@ button.close {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
-.footer {
+.footerss {
   position:fixed;
   bottom:0;
   width:100%;
 }
 
 .bordas{
-    box-shadow:         0px 0px 1em #666;
-    -webkit-box-shadow: 0px 0px 1em #666;
-    -moz-box-shadow:    0px 0px 1em #666;
+    box-shadow:         0px 0px 1em #ccc;
+    -webkit-box-shadow: 0px 0px 1em #ccc;
+    -moz-box-shadow:    0px 0px 1em #ccc;
     /*bordas arredondadas*/
     -moz-border-radius:    0px 0px 15px 15px; /* Para Firefox */
     -webkit-border-radius: 0px 0px 15px 15px; /*Para Safari e Chrome */

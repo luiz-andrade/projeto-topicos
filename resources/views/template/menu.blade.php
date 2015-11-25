@@ -1,25 +1,32 @@
 <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar">Menu</span>
+        {{--<span class="icon-bar">Menu</span>--}}
         {{--<span class="icon-bar"></span>--}}
-        {{--<span class="icon-bar"></span>--}}
+        <span class="glyphicon glyphicon-menu-hamburger"></span> Menu
     </button>
     <a class="navbar-brand" href="/"></a>
 </div>
 <div id="navbar" class="navbar-collapse collapse">
 <ul class="nav nav-tabs">
-    <li class=" {!! Request::is('propostatcc*') ? 'active': '' !!}"><a href="/propostatcc/">Inicio</a></li>
+    <li class=" {!! Request::is('/*') ? 'active': '' !!}">
+        <a href="/"><span class="glyphicon glyphicon-home"></span> Inicio</a>
+    </li>
+    <li class=" {!! Request::is('propostatcc*') ? 'active': '' !!}"><a href="/propostatcc/"><span class="glyphicon glyphicon-list"></span> Minha Proposta</a></li>
 
 {{--    {{ dd(Request::path()) }}--}}
     @if(Request::path() === "propostatcc" )
 
-        @if(isset($dados))
-            <li class="{!! Request::is('propostatcc/cadastrar*') ? 'active': '' !!}"><a href="/propostatcc/cadastrar">Cadastrar</a></li>
+        @if($dados->isEmpty())
+            <li class="{!! Request::is('propostatcc/cadastrar*') ? 'active': '' !!}">
+                <a href="/propostatcc/cadastrar"><span class="glyphicon glyphicon-plus-sign"></span> Cadastrar</a>
+            </li>
         @endif
 
     @endif
-    <li><a href="#">Contato</a></li>
+    <li class="{!! Request::is('propostatcc/contato*') ? 'active': '' !!}">
+        <a href="/propostatcc/contato"><span class="glyphicon glyphicon-envelope"></span>  Contato</a>
+    </li>
 
     @if(Auth::check())
         <li role="presentation" class="navbar-right dropdown">

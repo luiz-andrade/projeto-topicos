@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Auth;
@@ -17,6 +18,7 @@ class PropostaTccController extends Controller
 
     public function getIndex()
     {
+        $title = "Listagem de Proposta TCC 1";
         $usuario   = '';
         $hidden    = '';
         $disabled  = '';
@@ -28,15 +30,16 @@ class PropostaTccController extends Controller
             $hiddenAluno = '';
         }
 
-        //dd($usuario);
-        //$dados = PropostaTcc::all();
 
-        $dados = PropostaTcc::where('usuario', 'like', "%".$usuario."%");
+        $dados = PropostaTcc::where('usuario', 'like', "%".$usuario."%")->get();
 
-            dd($dados);
 
+
+        //dd($dados);
 
         $status = $dados->lists('status');
+
+        //if(!$dados->isEmpty()) //verifica objeto vazio
 
         foreach($status as $item) {
             switch($item){
@@ -48,6 +51,7 @@ class PropostaTccController extends Controller
         }
 
         return view('painel.index', compact(
+            'title',
             'dados',
             'status',
             'hidden',
@@ -59,8 +63,9 @@ class PropostaTccController extends Controller
 
     public function getCadastrar()
     {
+        $title = "Cadastrar nova Proposta TCC 1";
 
-        return view('painel.cadastrar');
+        return view('painel.cadastrar', compact('title'));
     }
 
     public function postCadastrar()
@@ -87,9 +92,11 @@ class PropostaTccController extends Controller
 
     public function getEditar($id)
     {
+        $title = "Editar Proposta TCC 1";
+
         $proposta = PropostaTcc::find($id);
 
-        return view("painel.editar", compact('proposta'));
+        return view("painel.editar", compact('proposta', 'title'));
     }
 
     public function postEditar($id)
@@ -160,6 +167,12 @@ class PropostaTccController extends Controller
         $pdf->loadHTML($view);
         return $pdf->stream($title.'.pdf');
         //return $pdf->download($title.'.pdf');//para baixar o arquivo
+    }
+
+    public function getContato()
+    {
+        $title = 'Contato';
+        return view('painel.contato', compact('title'));
     }
 
 }

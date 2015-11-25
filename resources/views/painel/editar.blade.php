@@ -1,7 +1,10 @@
 @extends('template.template')
 
 @section('content')
-<h2>Editar proposta TCC 1</h2>
+
+    @section('title')
+        <h3>{!! $title !!}</h3>
+    @endsection
 
 @if(count($errors) > 0)
     <div class="alert alert-warning alert-dismissible" role="alert">

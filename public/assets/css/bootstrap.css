@@ -4032,11 +4032,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   display: block;
   padding: 10px 15px;
+  background-color: #ffffff; /*alteracao propostatcc*/
+    color: #337AB7;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eee;
+  background-color: #337AB7;
+  color: #ffffff;
 }
 .nav > li.disabled > a {
   color: #777;
@@ -6803,4 +6806,15 @@ button.close {
   position:fixed;
   bottom:0;
   width:100%;
+}
+
+.bordas{
+    box-shadow:         0px 0px 1em #666;
+    -webkit-box-shadow: 0px 0px 1em #666;
+    -moz-box-shadow:    0px 0px 1em #666;
+    /*bordas arredondadas*/
+    -moz-border-radius:    0px 0px 15px 15px; /* Para Firefox */
+    -webkit-border-radius: 0px 0px 15px 15px; /*Para Safari e Chrome */
+    border-radius:         0px 0px 15px 15px; /* Para Opera 10.5+*/
+    background: #eee;
 }

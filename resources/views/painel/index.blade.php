@@ -13,9 +13,11 @@
             <th>Titulo</th>
             <th>Situação</th>
             <th>Ação</th>
+            <th>Visualização</th>
         </tr>
         </thead>
         <tbody>
+
     @foreach($dados as $dado)
         <tr>
             <td>
@@ -37,18 +39,28 @@
                 {!! $dado->status !!}
             </td>
 
-            <td colspan="2">
+            <td>
                 @if(!empty($usuario))
                     @if(!$hidden)
-                    <div class="{!! $hiddenAluno !!}">
-                        <a href="/propostatcc/editar/{!! $dado->id !!}" class="btn btn-xs btn-warning">
-                            <span class="glyphicon glyphicon-edit" aria-hidden="true"> {!! $btnEditar !!}</span>
-                        </a>&nbsp;
-
-                        <a href="/propostatcc/enviar/{!! $dado->id !!}?situacao=3" class="btn btn-xs btn-success">
-                            <span class="glyphicon glyphicon-send" aria-hidden="true"> Enviar </span>
-                        </a>
-                    </div>&nbsp;
+                    <span class="{!! $hiddenAluno !!}">
+                        <!-- Single button -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Escolha <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/propostatcc/editar/{!! $dado->id !!}">
+                                        <span class="glyphicon glyphicon-edit" aria-hidden="true"> {!! $btnEditar !!}</span>
+                                    </a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li> <a href="/propostatcc/enviar/{!! $dado->id !!}?situacao=3">
+                                        <span class="glyphicon glyphicon-send" aria-hidden="true"> Enviar </span>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </span>&nbsp;
                     @endif
                 @else
                     <div class="{!! $hidden !!}">
@@ -64,16 +76,17 @@
                         </a>&nbsp;
                     </div>
                 @endif
+            </td>
+            <td>
+                <button type="button" class="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+                    <span class="glyphicon glyphicon-zoom-in"></span> Ver na tela
+                </button>
 
-                    <button type="button" class="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
-                        <span class="glyphicon glyphicon-zoom-in"></span> Ver
-                    </button>
+                {{--<span class="glyphicon glyphicon-download" aria-hidden="true"> PDF</span>--}}
 
-                        {{--<span class="glyphicon glyphicon-download" aria-hidden="true"> PDF</span>--}}
-
-                    <a href="/propostatcc/pdf/{!! $dado->id !!}" class="btn btn-xs btn-info">
-                        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"> PDF</span>
-                    </a>
+                <a href="/propostatcc/pdf/{!! $dado->id !!}" class="btn btn-xs btn-info">
+                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"> PDF</span>
+                </a>
             </td>
         </tr>
 

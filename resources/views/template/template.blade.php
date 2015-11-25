@@ -19,7 +19,7 @@
 
 <body>
 
-<div class="" style="background: #D9EDF7">
+<div class="" style="box-shadow:2px 0px 21px #D9EDF7; background-color: #F7FAFC;" >
     <div class="container">
         <div class="col-sm-3">
             <a href="/">
@@ -39,12 +39,13 @@
     </div>
 </div>
 
-<div class="container" >
+<div class="container">
 {{-- style="background: #F5F5F5" --}}
 
     <!-- Main component for a primary marketing message or call to action -->
     <div class="">
         @yield('corpo')
+
 
         @section('content')
 
@@ -53,7 +54,7 @@
 </div> <!-- /container -->
 
 <!-- Site footer -->
-<div class="footer" style="background: #D9EDF7">
+<div class="footer" style="box-shadow:0px -6px 5px #D9EDF7;  background-image: -webkit-linear-gradient(top, #ffffff 0%, #F6F6F6 47%, #ededed 100%);">
     <div class="container" style="padding: 5px">
     <footer class="text-center">
         <p>&copy; Ulbra 2015</p>

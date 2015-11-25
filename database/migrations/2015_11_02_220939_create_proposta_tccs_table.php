@@ -28,11 +28,10 @@ class CreatePropostaTccsTable extends Migration
             $table->text('objetivo_especifico');
             $table->text('justificativa');
             $table->text('usuario')->unique();
-            $table->string('status')->default('revisar');
+            $table->string('status', 15)->default('revisar');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

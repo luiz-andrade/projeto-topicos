@@ -53,7 +53,6 @@
                         <span class="{!! $hiddenAluno !!}">
                             <!-- Single button -->
 
-
                             <div class="btn-group">
                                 <button type="button" class="btn btn-xs btn-primaryme dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Escolha <span class="caret"></span>
@@ -67,7 +66,8 @@
                                     <li role="separator" class="divider"></li>
                                     <li> <a href="/propostatcc/enviar/{!! $dado->id !!}?situacao=3">
                                             <span class="glyphicon glyphicon-send" aria-hidden="true"> Enviar </span>
-                                        </a></li>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </span>&nbsp;

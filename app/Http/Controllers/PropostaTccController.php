@@ -33,8 +33,6 @@ class PropostaTccController extends Controller
 
         $dados = PropostaTcc::where('usuario', 'like', "%".$usuario."%")->get();
 
-
-
         //dd($dados);
 
         $status = $dados->lists('status');
@@ -48,6 +46,8 @@ class PropostaTccController extends Controller
                 case 'revisar':     $disabled    = 'disabled'; break;
                 case 'aguardando':  $hiddenAluno = 'hidden';   break;
             }
+
+            //dd($item);
         }
 
         return view('painel.index', compact(

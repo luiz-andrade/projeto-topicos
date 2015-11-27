@@ -13,6 +13,7 @@ class WelcomeController extends Controller
 {
     public function getIndex()
     {
+        $usuario = '';
         $title = "Sistema de cadastro de Proposta TCC";
 
         if (Auth::user()->tipo === 'aluno') {

@@ -58,7 +58,7 @@ class PropostaTcc extends Model
     {
         return Carbon::parse($date)->format('d/m/Y');
     }
-
+/*
     public function getStatusAttribute($value){
 
         if($value == 'aprovado'){
@@ -68,8 +68,7 @@ class PropostaTcc extends Model
         }else{
             $teste= "<span class='btn btn-xs btn-warning'>{$value}</span>";
         }
-
         return $teste;
-
     }
+    */
 }

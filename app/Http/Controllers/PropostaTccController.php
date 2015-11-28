@@ -30,7 +30,6 @@ class PropostaTccController extends Controller
             $hiddenAluno = '';
         }
 
-
         $dados = PropostaTcc::where('usuario', 'like', "%".$usuario."%")->get();
 
         //dd($dados);

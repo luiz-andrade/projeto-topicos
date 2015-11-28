@@ -24,6 +24,14 @@ class AuthController extends Controller
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 
+    public function getRegister()
+    {
+
+        $orientador = User::where('tipo', 'coordenador')->lists('name', 'email');
+        //dd($orientador);
+        return view('auth.register', compact('orientador'));
+    }
+
     protected function validator(array $data)
     {
         return Validator::make($data, [

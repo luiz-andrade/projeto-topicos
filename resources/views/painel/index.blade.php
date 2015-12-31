@@ -1,3 +1,4 @@
+
 @extends('template.template')
 
 @section('content')
@@ -51,7 +52,7 @@
                     @if(!empty($usuario))
                         @if(!$hidden)
                         <span class="{!! $hiddenAluno !!}">
-                            <!-- Single button --->
+                            <!-- Single button -->
 
                             <div class="btn-group">
                                 <button type="button" class="btn btn-xs btn-primaryme dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -81,9 +82,14 @@
                                 <span class="glyphicon glyphicon-send" aria-hidden="true"> Reprovar </span>
                             </a>&nbsp;
 
-                            <a href="/propostatcc/enviar/{!! $dado->id !!}?situacao=2" class="btn btn-xs btn-warning {!! $disabled !!} ">
+                            <!-- <a href="/propostatcc/enviar/{!! $dado->id !!}?situacao=2" class="btn btn-xs btn-warning {!! $disabled !!} ">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"> {!! $btnEditar !!} </span>
-                            </a>&nbsp;
+                            </a>&nbsp;-->
+                            @if($dado->status !== 'revisar')
+                                <button type="button" class="btn btn-xs btn-info" data-toggle="modal" data-target="#modalMensagem">
+                                    <span class="glyphicon glyphicon-zoom-in"></span> {!! $btnEditar !!}
+                                </button>
+                            @endif
                         </div>
                     @endif
                 </td>
@@ -108,6 +114,8 @@
     </div>
 
     @include('painel.show')
+    @include('painel.mensagem')
+
 @else
     <div class="alert alert-danger text-center">
         <h2>

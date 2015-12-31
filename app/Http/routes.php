@@ -34,6 +34,7 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'], function() {
 //    Route::get('/home', 'WelcomeController@getIndex');
 
     Route::controller('propostatcc', 'PropostaTccController');
+    Route::controller('mensagem', 'MensagemController');
 });
 
 

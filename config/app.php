@@ -6,7 +6,7 @@ return [
 
     'url' => 'http://localhost',
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Porto_Velho',
 
     'locale' => 'pt-BR',
 

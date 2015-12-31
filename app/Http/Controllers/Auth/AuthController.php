@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Requests\Request;
 use App\User;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Mail;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -23,14 +26,15 @@ class AuthController extends Controller
     {
         $this->middleware('guest', ['except' => 'getLogout']);
     }
-
+/*
     public function getRegister()
     {
 
-        $orientador = User::where('tipo', 'coordenador')->lists('name', 'email');
+        //$orientador = User::where('tipo', 'coordenador')->lists('name', 'email');
         //dd($orientador);
         return view('auth.register', compact('orientador'));
     }
+    */
 
     protected function validator(array $data)
     {
@@ -47,12 +51,41 @@ class AuthController extends Controller
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
+  /*  protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name'     => $data['name'],
             'email'    => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+*/
+    public function postRegister()
+    {
+        $request = Input::except('_token');
+
+        User::create([
+            'name'     => $request['name'],
+            'email'    => $request['email'],
+            'password' => bcrypt($request['password']),
+        ]);
+
+        $this->Email();
+
+        return view('auth.login');
+    }
+
+    public function Email(){
+
+
+        $usuario = 'aaa';
+        $email = 'luizz_andrade@hotmail.com';//$data['email'];
+
+        $email2 = Mail::send('mail.resposta', ['situacao' => 'asd'], function($m) use ($usuario, $email){
+            $m->from('luizgoncalves0@gmail.com', 'Novo Login de Acesso S304');
+            $m->to('luizz_andrade@hotmail.com')->subject('Novo login de acesso ao S304 para aprovar');
+
+            $m->cc($email, 'Obrigado por se registrar ')->subject($usuario. ' Aguarde resposta do administrador');
+        });
     }
 }

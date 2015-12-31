@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MensagemDados;
 use App\Models\PropostaTcc;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -10,6 +11,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Auth;
 
@@ -95,7 +97,11 @@ class PropostaTccController extends Controller
 
         $proposta = PropostaTcc::find($id);
 
-        return view("painel.editar", compact('proposta', 'title'));
+        $mensagem = MensagemDados::where('id_proposta', $id)->get();//->lists('mensagem', 'created_at');
+
+        //dd($mensagem);
+
+        return view("painel.editar", compact('proposta', 'title', 'mensagem'));
     }
 
     public function postEditar($id)
@@ -130,6 +136,18 @@ class PropostaTccController extends Controller
             case '3': $status = 'aguardando'; break;
         }
 
+        //if($situacao == '0'){
+            Mail::send('mail.resposta', ['situacao' => 'asd'], function($m) use ($situacao){
+                $m->from('luizgoncalves0@gmail.com', 'Coordenador de TCC');
+
+                $m->to('luizz_andrade@hotmail.com')->subject('PROPOSTA-TCC-Mudança de status da proposta('.$situacao.')');
+            });
+/*
+            Mail::send('emails.contato', $data, function($message) {
+                $message->from(Input::get('email'), Input::get('nome'));
+                $message->to('contato@billjr.com.br') ->subject('Contato Bill Jr.');
+            });*/
+        //}
         $proposta = PropostaTcc::find($id);
 
         $proposta->status = $status;
@@ -172,6 +190,25 @@ class PropostaTccController extends Controller
     {
         $title = 'Contato';
         return view('painel.contato', compact('title'));
+    }
+
+    public function postIndex()
+    {
+        $dadosFormulario = Input::except('_token');
+
+        //dd($dadosFormulario);
+
+        $id = Input::get('id_proposta');
+
+        $proposta = PropostaTcc::find($id);
+
+        $proposta->status = 'revisar';//$status;
+        $proposta->save();
+
+        MensagemDados::create($dadosFormulario);
+
+        return redirect()->back();
+
     }
 
 }

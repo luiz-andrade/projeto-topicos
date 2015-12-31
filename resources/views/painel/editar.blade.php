@@ -120,4 +120,18 @@
 </div>
 {!! Form::close() !!}
 
+<div class="panel panel-info">
+    <div class="panel-heading">Mensagem Coordenador</div>
+    <div class="panel-body">
+@foreach($mensagem as $mensagems)
+    <div class="panel panel-default">
+        <div class="panel-heading">Mensagem Dia {!! $mensagems->created_at !!}</div>
+        <div class="panel-body">
+            {!! $mensagems->mensagem !!}
+        </div>
+    </div>
+@endforeach
+    </div>
+</div>
+
 @endsection

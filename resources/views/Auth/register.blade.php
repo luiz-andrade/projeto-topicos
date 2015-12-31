@@ -7,7 +7,7 @@
 
     <title>Cadastrar Login de acesso</title>
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS.-->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
@@ -52,18 +52,7 @@
                         <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="password" class="control-label col-sm-2">Confirmar senha</label>
-                    <div class="col-sm-10">
-                        <select name="" id="" class="form-control">
-                            @foreach($orientador as $orientadores)
-                                <option value="">{!! $orientadores !!}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-
+                
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-success">Registrar</button>
                     <button type="submit" class="btn btn-danger">Voltar</button>

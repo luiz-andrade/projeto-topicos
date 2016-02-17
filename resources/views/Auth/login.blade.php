@@ -22,6 +22,9 @@
                 <h3 class="panel-title">Login de acesso</h3>
             </div>
             <div class="panel-body">
+
+                @include('partials.list-errors')
+
                 <form method="POST" action="/auth/login" class="form-horizontal">
                     {!! csrf_field() !!}
 

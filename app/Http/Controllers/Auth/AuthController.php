@@ -70,18 +70,18 @@ class AuthController extends Controller
             'password' => bcrypt($request['password']),
         ]);
 
-        $this->Email();
+        $this->Email($request['email'], $request['name']);
 
         return view('auth.login');
     }
 
-    public function Email(){
+    public function Email($email, $usuario)
+    {
 
+        //$usuario = 'aaa';
+        //$email = 'luizz_andrade@hotmail.com';//$data['email'];
 
-        $usuario = 'aaa';
-        $email = 'luizz_andrade@hotmail.com';//$data['email'];
-
-        $email2 = Mail::send('mail.resposta', ['situacao' => 'asd'], function($m) use ($usuario, $email){
+        $email2 = Mail::send('mail.resposta', ['situacao' => 'asd'], function($m) use ($email, $usuario){
             $m->from('luizgoncalves0@gmail.com', 'Novo Login de Acesso S304');
             $m->to('luizz_andrade@hotmail.com')->subject('Novo login de acesso ao S304 para aprovar');
 

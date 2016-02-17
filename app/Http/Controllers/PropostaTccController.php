@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Auth;
+use Laracasts\Flash\Flash;
 
 class PropostaTccController extends Controller
 {
@@ -118,8 +119,13 @@ class PropostaTccController extends Controller
                 ->withInput();
         }else {
 
-            $proposta->__construct($dadosFormulario);
-            $proposta->save();
+            //dd($proposta);
+
+            if($proposta->update($dadosFormulario)){
+                Flash::success('Registro alterado com sucesso.');
+
+                $this->email('aguardando');
+            }
 
             return redirect('propostatcc/');
         }
@@ -136,12 +142,7 @@ class PropostaTccController extends Controller
             case '3': $status = 'aguardando'; break;
         }
 
-        //if($situacao == '0'){
-            Mail::send('mail.resposta', ['situacao' => 'asd'], function($m) use ($situacao){
-                $m->from('luizgoncalves0@gmail.com', 'Coordenador de TCC');
-
-                $m->to('luizz_andrade@hotmail.com')->subject('PROPOSTA-TCC-Mudança de status da proposta('.$situacao.')');
-            });
+        //dd($user);
 /*
             Mail::send('emails.contato', $data, function($message) {
                 $message->from(Input::get('email'), Input::get('nome'));
@@ -151,7 +152,9 @@ class PropostaTccController extends Controller
         $proposta = PropostaTcc::find($id);
 
         $proposta->status = $status;
-        $proposta->save();
+        if($proposta->save()){
+            flash()->success('You have been logged out.');
+        }
 
         return redirect('propostatcc/');
     }
@@ -169,12 +172,6 @@ class PropostaTccController extends Controller
         $proposta = PropostaTcc::find($id);
         $ano = Carbon::createFromFormat('d/m/Y', $proposta->ano)->format('Y');
 
-//        dd($ano);
-        //$data['items'] = $proposta;
-
-        //dd($proposta);
-//        $dt_inicio= Carbon::createFromFormat('d/m/Y', Input::get('dt_inicio'))->format('Y-m-d');
-//        $dt_fim   = Carbon::createFromFormat('d/m/Y', Input::get('dt_fim'))->format('Y-m-d');
         $title = 'Proposta de TCC';
 
         $date    = date('d/m/Y H:m:s');
@@ -196,7 +193,7 @@ class PropostaTccController extends Controller
     {
         $dadosFormulario = Input::except('_token');
 
-        //dd($dadosFormulario);
+        dd($dadosFormulario);
 
         $id = Input::get('id_proposta');
 
@@ -205,9 +202,35 @@ class PropostaTccController extends Controller
         $proposta->status = 'revisar';//$status;
         $proposta->save();
 
-        MensagemDados::create($dadosFormulario);
+        if(MensagemDados::create($dadosFormulario)){
+            Flash::sucess('Mensagem enviada para o aluno');
+
+            $this->email('revisar');
+        }
 
         return redirect()->back();
+
+    }
+
+    protected function email($status, $email)
+    {
+        /*
+         * Aprovado-> envia email para o aluno
+         * Reprovado-> envia email para o aluno
+         * Revisar-> envia email para o aluno
+         * Aguardando-> envia email para o professor
+        */
+        $user = Auth::user();
+        //$user = 'luizgoncalves0@gmail.com';
+
+        $user->email = 'luizz_andrade@hotmail.com'; //email para testar
+        //dd($user->email);
+
+        Mail::send('mail.resposta', ['situacao' => 'asd'], function($m) use ($status, $user){
+            $m->from('nao-responder@ulbra.edu.br', 'Coordenador de TCC');
+
+            $m->to($user->email)->subject('PROPOSTA-TCC-Mudança de status da proposta('.$status.')');
+        });
 
     }
 

@@ -4,9 +4,15 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Laracasts\Presenter\PresentableTrait;
 
 class PropostaTcc extends Model
 {
+
+    use PresentableTrait;
+
+    protected $presenter = \App\Presenter\Presenters\PropostaTccPresenter::class;//  "App\\Presenter\\PropostaTccPresenter";
+
     protected $table = 'proposta_tccs';
 
     protected $dates = ['ano'];
@@ -29,6 +35,7 @@ class PropostaTcc extends Model
 
     protected $fillable =[
         'nome',
+        'status',
         'orientador',
         'titulo',
         'subtitulo',

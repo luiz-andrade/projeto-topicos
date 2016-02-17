@@ -28,6 +28,7 @@
             <tbody>
 
         @foreach($dados as $dado)
+
             <tr>
                 <td>
                     {!! count($dado->id) !!}
@@ -45,7 +46,7 @@
                     {!! $dado->titulo !!}
                 </td>
                 <td>
-                    {!! $dado->status !!}
+                    {!! $dado->present()->statusAtivo() !!}
                 </td>
 
                 <td>

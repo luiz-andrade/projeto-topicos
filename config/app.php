@@ -59,6 +59,8 @@ return [
 
         Barryvdh\DomPDF\ServiceProvider::class,
 
+        Laracasts\Flash\FlashServiceProvider::class,
+
     ],
 
     'aliases' => [
@@ -101,6 +103,8 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
         'PDF' => Barryvdh\DomPDF\Facade::class,
+
+        'Flash' => Laracasts\Flash\Flash::class
     ],
 
 ];

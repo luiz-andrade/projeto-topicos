@@ -36,13 +36,14 @@
 
 <div class="container-fluid panel">
     <div class="row text-center" >
+
         @section('title')
 
         @show
             <hr>
-    </div>
-{{-- style="background: #F5F5F5" --}}
 
+            @include('partials.mensagem-flash')
+    </div>
 
         @yield('corpo')
 
@@ -74,6 +75,10 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
+
+<script>
+    $('div.alertflash').delay(3000).slideUp(300);
+</script>
 
 </body>
 </html>
